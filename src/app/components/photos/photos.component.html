@@ -1,0 +1,41 @@
+<h1 class="text-center">List of Photos</h1>
+
+
+
+<hr/>
+<div class="row">
+  <h2>Add new Item</h2>
+    <form (submit)="addItem()" class="bg-info">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Title</label>
+        <input [(ngModel)]="title"  [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="exampleInputEmail1" placeholder="title">
+      </div>
+      <button  type="submit" class="btn btn-default">Add item</button>
+    </form>
+</div>
+<hr/>
+
+
+<div class="row">
+  <h2>Search</h2>
+    <form class="bg-info">
+      <div class="form-group">
+        <input [(ngModel)]="SearchInput"  [ngModelOptions]="{standalone: true}" type="text" class="form-control" placeholder="Search...">
+      </div>
+    </form>
+</div>
+<hr/>
+
+
+<div class="row photos_list" *ngIf="photosRes">
+  <div class="col-xs-6 col-md-3" *ngFor="let photo of photosRes | search: SearchInput" #myElement>
+    <div class="thumbnail">
+      <img src="{{ photo.thumbnailUrl }}" alt="...">
+      <div class="caption">
+        <a href="{{ photo.url }}"><h5>{{ photo.title }}</h5></a>
+        <button type="button" class="btn btn-danger" (click)="myElement.remove()">x</button>
+        </div>
+    </div>
+    
+  </div>
+</div>

@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+.Albums_list>div a {
+    height: 250px;
+    padding: 10px;
+    background: #ece;
+    text-align: center;
+    font-size: 40px;
+    font-size: 100px;
+    line-height: 210px;
+}
+.photos_list>div .thumbnail {
+    height: 310px;
+    padding: 10px;
+}

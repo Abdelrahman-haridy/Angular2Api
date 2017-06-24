@@ -1,0 +1,11 @@
+<h1 class="text-center">List of Albums</h1>
+
+<!--<a class="btn btn-info" (click)="fatchAlbums()">fatch data</a>-->
+
+<div class="row Albums_list" *ngIf="albumsRes">
+  <div class="col-xs-6 col-md-3" *ngFor="let album of albumsRes">
+    <a routerLink="/photos/{{ album.id }}" class="thumbnail">
+      {{ album.id }}
+    </a>
+  </div>
+</div>
